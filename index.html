@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="我的第一個個人介紹網站。">
+  <title>ikuka｜個人介紹</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="profile" aria-labelledby="name">
+    <header class="topbar">
+      <span class="label">我的第一個網站</span>
+      <button id="theme-toggle" type="button" aria-pressed="false">切換為淺色</button>
+    </header>
+    <div class="avatar" aria-hidden="true">ikuak</div>
+    <p class="eyebrow">HELLO, WORLD!</p>
+    <!-- 練習：修改名字與自我介紹。 -->
+    <h1 id="name">嗨，我是<span>ikuka</span>。</h1>
+    <p class="bio">我正在學習 Git。</p>
+    <section aria-labelledby="interests-title">
+      <h2 id="interests-title">我感興趣的事</h2>
+      <!-- 分支練習：在清單加入一項興趣。 -->
+      <ul class="interests">
+        <li>網頁設計</li>
+      </ul>
+    </section>
+    <a class="github-link" href="https://github.com">到 GitHub 探索 <span aria-hidden="true">↗</span></a>
+    <footer>從一個網頁開始，記錄每一次進步。</footer>
+  </main>
+</body>
+</html>
