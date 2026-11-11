@@ -1,33 +1,331 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="我的第一個個人介紹網站。">
-  <title>ikuka｜個人介紹</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IKUKA | 個人介紹與 GitHub 學習歷程網站</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <main class="profile" aria-labelledby="name">
-    <header class="topbar">
-      <span class="label">我的第一個網站</span>
-      <button id="theme-toggle" type="button" aria-pressed="false">切換為淺色</button>
-    </header>
-    <div class="avatar" aria-hidden="true">ikuak</div>
-    <p class="eyebrow">HELLO, WORLD!</p>
-    <!-- 練習：修改名字與自我介紹。 -->
-    <h1 id="name">嗨，我是<span>ikuka</span>。</h1>
-    <p class="bio">我正在學習 Git。</p>
-    <section aria-labelledby="interests-title">
-      <h2 id="interests-title"></h2>
-      <!-- 分支練習：在清單加入一項興趣。 -->
-      <ul class="interests">
-        <li>網頁設計</li>
-      </ul>
+<body id="top">
+  <!-- 頂部導覽列 -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#top" class="brand-logo">
+        <span>⚡ IKUKA.dev</span>
+        <span class="brand-badge">Learning GitHub</span>
+      </a>
+      <nav aria-label="主要導覽">
+        <ul class="nav-links">
+          <li><a href="#about">關於我</a></li>
+          <li><a href="#learning">學習進度</a></li>
+          <li><a href="#playground">Git 練習室</a></li>
+          <li><a href="#projects">練習作品</a></li>
+          <li><a href="#contact">留言交流</a></li>
+        </ul>
+      </nav>
+      <button type="button" id="theme-toggle" class="theme-btn">☀️ 切換淺色</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero 個人主視覺區 -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span>目前狀態：正在積極學習 Git 與 GitHub 版本控制</span>
+          </div>
+          <h1 class="hero-title">
+            嗨，我是 <span class="highlight-text">IKUKA</span> 👋<br />
+            用程式碼記錄每一步成長
+          </h1>
+          <p class="hero-subtitle">
+            歡迎來到我的個人介紹網站！我目前正專注於學習 <strong>GitHub 版本控制、分支管理與開源協作</strong>，並透過 HTML、CSS 與 JavaScript 親手打造這個網站，準備部署上線與全世界分享。
+          </p>
+          <div class="hero-actions">
+            <a href="#learning" class="btn btn-primary">📊 查看 GitHub 學習進度</a>
+            <a href="#playground" class="btn btn-secondary">💻 體驗互動式 Git 終端機</a>
+          </div>
+        </div>
+
+        <!-- GitHub 風格個人狀態卡 -->
+        <aside class="profile-card" aria-label="IKUKA GitHub 狀態卡">
+          <div class="profile-header">
+            <div class="avatar-circle">IK</div>
+            <div class="profile-meta">
+              <h2>IKUKA</h2>
+              <span class="profile-handle">@ikuka · GitHub Learner</span>
+            </div>
+          </div>
+
+          <div class="contrib-box">
+            <div class="contrib-header">
+              <span>GitHub 學習活躍度 (點擊方格記錄今日練習)</span>
+              <span style="color: var(--accent-secondary);">Active</span>
+            </div>
+            <div id="contrib-grid" class="contrib-grid"></div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="stat-item">
+              <span id="stat-commits" class="stat-num">28</span>
+              <span class="stat-label">練習 Commits</span>
+            </div>
+            <div class="stat-item">
+              <span id="stat-progress" class="stat-num">50%</span>
+              <span class="stat-label">里程碑達成</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3</span>
+              <span class="stat-label">核心檔案 (HTML/CSS/JS)</span>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
-    <a class="github-link" href="https://github.com">到 GitHub 探索 <span aria-hidden="true">↗</span></a>
-    <footer>從一個網頁開始，記錄每一次進步。</footer>
+
+    <!-- 關於我 Section -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-tag">ABOUT IKUKA</span>
+        <h2 class="section-title">關於我與我正在學什麼</h2>
+        <p class="section-desc">
+          從認識第一個 HTML 標籤開始，到學會用 Git 記錄每一次修改，享受把想法變成網頁作品的過程。
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="info-card">
+          <div class="card-icon">🧑‍💻</div>
+          <h3>我是誰 (Who I Am)</h3>
+          <p>
+            我是 <strong>IKUKA</strong>，一位對網頁前端技術與開源社群充滿熱情的學習者。喜歡透過邊做邊學的方式，把學到的新觀念整理成清楚的筆記與實作專案。
+          </p>
+          <div class="tag-list">
+            <span class="skill-tag">自主學習</span>
+            <span class="skill-tag">問題解決</span>
+            <span class="skill-tag">筆記整理</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">🐙</div>
+          <h3>正在學習 GitHub</h3>
+          <p>
+            目前正系統化學習 Git 版本控制與 GitHub 協作流程，包含建立儲存庫 (Repository)、撰寫清楚的 Commit 訊息、管理 Branch 分支，以及使用 GitHub Pages 架設個人網站。
+          </p>
+          <div class="tag-list">
+            <span class="skill-tag">git init / commit</span>
+            <span class="skill-tag">Branch 分支</span>
+            <span class="skill-tag">Pull Request</span>
+            <span class="skill-tag">GitHub Pages</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">🛠️</div>
+          <h3>網站技術架構</h3>
+          <p>
+            本網站採用標準的前端三劍客分離架構開發，結構清晰且易於維護，方便直接上傳至 GitHub 儲存庫進行版本管理。
+          </p>
+          <div class="tag-list">
+            <span class="skill-tag">index.html</span>
+            <span class="skill-tag">style.css</span>
+            <span class="skill-tag">jscript.js</span>
+            <span class="skill-tag">RWD 響應式</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GitHub 學習里程碑追蹤器 -->
+    <section id="learning">
+      <div class="section-header">
+        <span class="section-tag">LEARNING ROADMAP</span>
+        <h2 class="section-title">IKUKA 的 GitHub 學習里程碑</h2>
+        <p class="section-desc">
+          點擊下方任一項目可切換「已完成 / 學習中」狀態，或新增你接下來想挑戰的 GitHub 技能！
+        </p>
+      </div>
+
+      <div class="learning-panel">
+        <div class="progress-header">
+          <strong>整體學習完成度</strong>
+          <span id="progress-summary" style="font-size: 0.9rem; color: var(--text-secondary);">已完成 3 / 6 項目標 (50%)</span>
+        </div>
+        <div class="progress-bar-wrap">
+          <div id="progress-bar-fill" class="progress-bar-fill" style="width: 50%;"></div>
+        </div>
+
+        <div class="filter-Row">
+          <div class="tab-group">
+            <button type="button" class="tab-btn filter-tab-btn active" data-filter="all">全部項目</button>
+            <button type="button" class="tab-btn filter-tab-btn" data-filter="done">已完成</button>
+            <button type="button" class="tab-btn filter-tab-btn" data-filter="todo">學習中</button>
+          </div>
+
+          <div class="add-goal-box">
+            <input type="text" id="new-goal-input" class="input-field" placeholder="輸入新的 GitHub 學習目標..." />
+            <button type="button" id="add-goal-btn" class="btn btn-primary" style="padding: 0.55rem 1rem;">新增</button>
+          </div>
+        </div>
+
+        <div id="milestone-list" class="milestone-list"></div>
+      </div>
+    </section>
+
+    <!-- 互動式 Git 指令練習室 -->
+    <section id="playground">
+      <div class="section-header">
+        <span class="section-tag">GIT PLAYGROUND</span>
+        <h2 class="section-title">常用 Git 指令速查與模擬終端機</h2>
+        <p class="section-desc">
+          整理我在學習 GitHub 過程中最常使用的核心指令。點擊「複製」可直接使用，點擊「執行」可在右側模擬終端機看到實際運作效果！
+        </p>
+      </div>
+
+      <div class="playground-grid">
+        <div id="cmd-list" class="cmd-list"></div>
+
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">ikuka@github-learn: ~/portfolio (zsh)</span>
+            <button type="button" id="terminal-clear-btn" class="mini-btn">清除</button>
+          </div>
+
+          <div id="terminal-output" class="terminal-body">
+            <div class="term-line">
+              <span class="term-prompt">ikuka@github-learn:~/site$</span> whoami
+            </div>
+            <div class="term-line">
+              <div class="term-output">IKUKA — 正在積極學習 Git 與 GitHub 的網頁開發者 🚀
+點擊左側指令的「執行」按鈕，或在下方輸入 help / git status 試試看！</div>
+            </div>
+          </div>
+
+          <div class="terminal-input-row">
+            <span class="term-prompt">$</span>
+            <input type="text" id="terminal-input" class="terminal-input" placeholder="輸入 Git 指令 (例如 git status 或 help)..." />
+            <button type="button" id="terminal-run-btn" class="mini-btn">執行</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 練習作品與專案展示 -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-tag">PRACTICE PROJECTS</span>
+        <h2 class="section-title">我的 GitHub 實作練習作品</h2>
+        <p class="section-desc">
+          透過實際動手寫程式與管理儲存庫，逐步累積屬於 IKUKA 的作品集。
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="info-card">
+          <div class="card-icon">🌐</div>
+          <h3>IKUKA 個人介紹網站</h3>
+          <p>
+            使用 <code>index.html</code>、<code>style.css</code> 與 <code>jscript.js</code> 打造的個人形象網站，支援深淺色主題切換與互動式學習追蹤。
+          </p>
+          <button type="button" class="btn btn-secondary open-project-btn" data-project="portfolio" style="width: 100%; margin-top: 0.5rem;">查看專案詳情</button>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">📘</div>
+          <h3>Git &amp; GitHub 學習筆記庫</h3>
+          <p>
+            以 Markdown 整理的 Git 版本控制實戰筆記，涵蓋初始化設定、分支合併以及常見衝突排解指南。
+          </p>
+          <button type="button" class="btn btn-secondary open-project-btn" data-project="notes" style="width: 100%; margin-top: 0.5rem;">查看專案詳情</button>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">🚀</div>
+          <h3>GitHub Pages 部署練習</h3>
+          <p>
+            練習如何建立公開 Repository 並啟用 GitHub Pages，將本地端編寫好的靜態網頁發布成公開網址。
+          </p>
+          <button type="button" class="btn btn-secondary open-project-btn" data-project="deploy" style="width: 100%; margin-top: 0.5rem;">查看專案詳情</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 留言交流區 -->
+    <section id="contact" style="border-bottom: none;">
+      <div class="section-header">
+        <span class="section-tag">GUESTBOOK &amp; CONNECT</span>
+        <h2 class="section-title">給 IKUKA 的學習加油留言板</h2>
+        <p class="section-desc">
+          如果你也在學習 GitHub 或前端開發，歡迎留下你的名字與鼓勵訊息，一起在寫程式的路上互相加油！
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="info-card">
+          <h3>✍️ 撰寫留言</h3>
+          <form id="guestbook-form" style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="visitor-name">你的暱稱 / GitHub ID</label>
+              <input type="text" id="visitor-name" class="input-field" placeholder="例如：dev_partner" />
+            </div>
+            <div class="form-group">
+              <label for="visitor-message">給 IKUKA 的話或學習交流</label>
+              <textarea id="visitor-message" class="input-field" rows="3" placeholder="一起加油！GitHub 越用越順手！"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">送出留言</button>
+          </form>
+        </div>
+
+        <div class="info-card">
+          <h3>💬 最新留言紀錄</h3>
+          <div id="guestbook-list" class="guestbook-list" style="margin-top: 1rem;">
+            <div class="guest-card">
+              <div class="guest-card-header">
+                <span class="guest-author">@IKUKA</span>
+                <span style="color: var(--text-secondary);">置頂訊息</span>
+              </div>
+              <p style="font-size: 0.92rem;">Hello World! 這是我的第一個 GitHub 個人介紹網站，目標是持續累積 Commit 並學會開源協作！</p>
+            </div>
+            <div class="guest-card">
+              <div class="guest-card-header">
+                <span class="guest-author">@octocat_fan</span>
+                <span style="color: var(--text-secondary);">預設範例</span>
+              </div>
+              <p style="font-size: 0.92rem;">網站介面超有 GitHub 風格！祝你學習 Git 分支與 Pull Request 一切順利 🎉</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- 專案詳情彈窗 -->
+  <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <h3 id="modal-title" style="font-size: 1.3rem; margin-bottom: 0.4rem;">專案名稱</h3>
+      <p id="modal-tech" style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-primary); margin-bottom: 1rem;"></p>
+      <p id="modal-body" style="color: var(--text-secondary); margin-bottom: 1.5rem;"></p>
+      <button type="button" id="modal-close-btn" class="btn btn-primary" style="width: 100%;">關閉視窗</button>
+    </div>
+  </div>
+
+  <!-- Toast 通知元件 -->
+  <div id="toast" class="toast-box" role="status" aria-live="polite"></div>
+
+  <footer>
+    <div class="container">
+      <p>Built with ❤️ by <strong>IKUKA</strong> · 正在學習 Git &amp; GitHub · Powered by <code>index.html</code> + <code>style.css</code> + <code>jscript.js</code></p>
+    </div>
+  </footer>
+
+  <script src="jscript.js"></script>
 </body>
 </html>
